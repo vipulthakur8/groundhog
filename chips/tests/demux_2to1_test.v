@@ -14,6 +14,7 @@ module dmux_tb;
 		$display("%b %b %b %b", in, sel, out1, out2);
 		in = 1; sel = 1; #10
 		$display("%b %b %b %b", in, sel, out1, out2);
+		$finish;
 	end
 	
 endmodule

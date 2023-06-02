@@ -23,6 +23,7 @@ module dut;
 		$display("%b %b %b %b", a, b, s, out);
 		a = 1; b = 1; s = 1; #10
 		$display("%b %b %b %b", a, b, s, out);
+		$finish;
 	end
 			
 		

@@ -1,0 +1,13 @@
+// implement using nand.
+and
+or/xor
+not
+mux/demux
+multibit not/ and/ or - 16 bits
+multibit mux - 16 bits
+
+multiway  or - 8 way
+multiway mux - 4 way 16 bit ; 8 way 16 bit
+multiway demux - 4 way 1 bit; 8 way 1bit
+
+
