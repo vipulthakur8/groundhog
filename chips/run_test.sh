@@ -28,5 +28,10 @@ iverilog -o ./test_results/OR16BIT	./tests/or_16bit_chip_tb.v or_chip.v or_16bit
 
 ./test_results/OR16BIT
 
+echo "Testing 16 bit mux"
+iverilog -o ./test_results/MUX16BIT ./tests/mux_16bit_chip_tb.v and_chip.v or_chip.v not_chip.v and_16bit_chip.v or_16bit_chip.v not_16bit_chip.v mux_16bit_chip.v
+
+./test_results/MUX16BIT
+
 rm test_results -r
 
