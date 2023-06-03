@@ -23,6 +23,10 @@ iverilog -o ./test_results/AND16BIT	./tests/and_16bit_chip_tb.v and_chip.v not_c
 
 ./test_results/AND16BIT
 
-rm test_results -r
+echo "Testing 16 bit or gate"
+iverilog -o ./test_results/OR16BIT	./tests/or_16bit_chip_tb.v or_chip.v or_16bit_chip.v
 
+./test_results/OR16BIT
+
+rm test_results -r
 

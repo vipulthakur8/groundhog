@@ -5,7 +5,7 @@ module dut;
 	mux_chip_2to1 mux(out, a, b, s);
 	//$display("a b c out");
 	initial begin
-		$dumpfile("mux.vcd");
+		$dumpfile("./test_results/mux.vcd");
 		$dumpvars(0, dut);
 		a = 0; b = 0; s = 0; #10
 		$display("%b %b %b %b", a, b, s, out);
