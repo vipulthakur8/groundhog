@@ -1,3 +1,3 @@
 # groundhog
 
-Groundhog is a basic general purpose computer. 
+Groundhog is a 16 bit general purpose computer. 
