@@ -1,11 +1,12 @@
 module or_16bit_chip(out, a, b);
-	input [15:0] a;
-	input [15:0] b;
-	output [15:0] out;
+	input [15:0]a;
+	input [15:0]b;
+	output [15:0]out;
 	
 	or_chip or_chip0(out[0], a[0], b[0]);		
 	or_chip or_chip1(out[1], a[1], b[1]);		
 	or_chip or_chip2(out[2], a[2], b[2]);		
+	or_chip or_chip3(out[3], a[3], b[3]);		
 	or_chip or_chip4(out[4], a[4], b[4]);		
 	or_chip or_chip5(out[5], a[5], b[5]);		
 	or_chip or_chip6(out[6], a[6], b[6]);		
