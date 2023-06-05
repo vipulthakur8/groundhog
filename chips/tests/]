@@ -1,0 +1,21 @@
+module mux_8way16bit_chip_tb;
+	reg [15:0]a;
+	reg [15:0]b;
+	reg [15:0]c;
+	reg [15:0]d;
+	reg [15:0]e;
+	reg [15:0]f;
+	reg [15:0]g;
+	reg [15:0]h;
+	reg [2:0]sel;
+	wire [15:0]out;
+	
+	mux_8way16bit_chip mux8way16bit(out, a, b, c, d, e, f, g, h, sel);
+
+	initial begin
+		$monitor("a: %b, b: %b, c: %b, d: %b, e: %b, f: %b, g: %b, h: %b, sel: %b,  out: %b", a, b, c, d, e, f, g, h, sel, out );	
+	end
+
+endmodule
+
+

@@ -8,8 +8,7 @@ module and_16bit_chip_tb();
 	and_16bit_chip and16bit(out, a, b);
 	
 	initial begin
-		$display("From the and 16 bit test");
-		$dumpfile("./test_results/AND16BIT");
+		$dumpfile("./test_results/AND16BIT.vcd");
 		$dumpvars(0, and_16bit_chip_tb);
 		a = 16'b0000000000000000; b = 16'b0000000000000000; #10
 		$monitor("a = %b, b = %b, out = %b", a, b, out);

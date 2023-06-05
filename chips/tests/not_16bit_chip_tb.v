@@ -9,7 +9,8 @@ module not_16bit_chip_tb;
 	not_16bit_chip not16bit_dut(.out(out), .in(in));
 	
 	initial begin
-		$dumpfile("./test_results/NOT16BIT");
+		$dumpfile("./test_results/NOT16BIT.vcd");
+		$dumpvars(0, not_16bit_chip_tb);
 		// apply inputs;
 		in = 16'b0000000000000000; #10	
 	

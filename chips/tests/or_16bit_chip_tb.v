@@ -7,7 +7,7 @@ module or_16bit_chip_tb();
 	or_16bit_chip or16bit(out, a, b);
 	
 	initial begin
-		$dumpfile("./test_results/OR16BIT");
+		$dumpfile("./test_results/OR16BIT.vcd");
 		$dumpvars(0, or_16bit_chip_tb);
 		
 		a = 16'b0000000000000000; b = 16'b0000000000000000;	#10
