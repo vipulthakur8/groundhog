@@ -1,0 +1,138 @@
+#! /usr/local/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1658-g74c52d6fa)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x5636cfae18f0 .scope module, "half_adder_tb" "half_adder_tb" 2 1;
+ .timescale 0 0;
+v0x5636cfafe670_0 .var "a", 0 0;
+v0x5636cfafe730_0 .var "b", 0 0;
+v0x5636cfafe7f0_0 .net "carry", 0 0, L_0x5636cfafe9a0;  1 drivers
+v0x5636cfafe890_0 .net "sum", 0 0, L_0x5636cfaff040;  1 drivers
+S_0x5636cfae1a80 .scope module, "half_adder_dut" "half_adder" 2 5, 3 1 0, S_0x5636cfae18f0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "sum";
+    .port_info 1 /OUTPUT 1 "carry";
+    .port_info 2 /INPUT 1 "a";
+    .port_info 3 /INPUT 1 "b";
+v0x5636cfafe3b0_0 .net "a", 0 0, v0x5636cfafe670_0;  1 drivers
+v0x5636cfafe450_0 .net "b", 0 0, v0x5636cfafe730_0;  1 drivers
+v0x5636cfafe510_0 .net "carry", 0 0, L_0x5636cfafe9a0;  alias, 1 drivers
+v0x5636cfafe5b0_0 .net "sum", 0 0, L_0x5636cfaff040;  alias, 1 drivers
+S_0x5636cfae64a0 .scope module, "and_chip" "and_chip" 3 5, 4 2 0, S_0x5636cfae1a80;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0x5636cfafe930 .functor NAND 1, v0x5636cfafe670_0, v0x5636cfafe730_0, C4<1>, C4<1>;
+L_0x5636cfafe9a0 .functor NAND 1, L_0x5636cfafe930, L_0x5636cfafe930, C4<1>, C4<1>;
+v0x5636cfae1cd0_0 .net "a", 0 0, v0x5636cfafe670_0;  alias, 1 drivers
+v0x5636cfafbe00_0 .net "b", 0 0, v0x5636cfafe730_0;  alias, 1 drivers
+v0x5636cfafbec0_0 .net "out", 0 0, L_0x5636cfafe9a0;  alias, 1 drivers
+v0x5636cfafbf90_0 .net "w1", 0 0, L_0x5636cfafe930;  1 drivers
+S_0x5636cfafc0d0 .scope module, "xor_chip" "xor_chip" 3 6, 5 1 0, S_0x5636cfae1a80;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+v0x5636cfafdd80_0 .net "a", 0 0, v0x5636cfafe670_0;  alias, 1 drivers
+v0x5636cfafde20_0 .net "b", 0 0, v0x5636cfafe730_0;  alias, 1 drivers
+v0x5636cfafdee0_0 .net "not_a", 0 0, L_0x5636cfafea60;  1 drivers
+v0x5636cfafdfd0_0 .net "not_b", 0 0, L_0x5636cfafeb10;  1 drivers
+v0x5636cfafe0c0_0 .net "out", 0 0, L_0x5636cfaff040;  alias, 1 drivers
+v0x5636cfafe1b0_0 .net "w1", 0 0, L_0x5636cfafec50;  1 drivers
+v0x5636cfafe2a0_0 .net "w2", 0 0, L_0x5636cfafed70;  1 drivers
+S_0x5636cfafc300 .scope module, "and_chip1" "and_chip" 5 10, 4 2 0, S_0x5636cfafc0d0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0x5636cfafebc0 .functor NAND 1, v0x5636cfafe670_0, L_0x5636cfafeb10, C4<1>, C4<1>;
+L_0x5636cfafec50 .functor NAND 1, L_0x5636cfafebc0, L_0x5636cfafebc0, C4<1>, C4<1>;
+v0x5636cfafc570_0 .net "a", 0 0, v0x5636cfafe670_0;  alias, 1 drivers
+v0x5636cfafc660_0 .net "b", 0 0, L_0x5636cfafeb10;  alias, 1 drivers
+v0x5636cfafc700_0 .net "out", 0 0, L_0x5636cfafec50;  alias, 1 drivers
+v0x5636cfafc7d0_0 .net "w1", 0 0, L_0x5636cfafebc0;  1 drivers
+S_0x5636cfafc910 .scope module, "and_chip2" "and_chip" 5 11, 4 2 0, S_0x5636cfafc0d0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0x5636cfafece0 .functor NAND 1, v0x5636cfafe730_0, L_0x5636cfafea60, C4<1>, C4<1>;
+L_0x5636cfafed70 .functor NAND 1, L_0x5636cfafece0, L_0x5636cfafece0, C4<1>, C4<1>;
+v0x5636cfafcb40_0 .net "a", 0 0, v0x5636cfafe730_0;  alias, 1 drivers
+v0x5636cfafcc30_0 .net "b", 0 0, L_0x5636cfafea60;  alias, 1 drivers
+v0x5636cfafccd0_0 .net "out", 0 0, L_0x5636cfafed70;  alias, 1 drivers
+v0x5636cfafcda0_0 .net "w1", 0 0, L_0x5636cfafece0;  1 drivers
+S_0x5636cfafcee0 .scope module, "not_chip1" "not_chip" 5 7, 6 2 0, S_0x5636cfafc0d0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out";
+    .port_info 1 /INPUT 1 "a";
+L_0x5636cfafea60 .functor NAND 1, v0x5636cfafe670_0, v0x5636cfafe670_0, C4<1>, C4<1>;
+v0x5636cfafd0f0_0 .net "a", 0 0, v0x5636cfafe670_0;  alias, 1 drivers
+v0x5636cfafd1e0_0 .net "out", 0 0, L_0x5636cfafea60;  alias, 1 drivers
+S_0x5636cfafd2c0 .scope module, "not_chip2" "not_chip" 5 8, 6 2 0, S_0x5636cfafc0d0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out";
+    .port_info 1 /INPUT 1 "a";
+L_0x5636cfafeb10 .functor NAND 1, v0x5636cfafe730_0, v0x5636cfafe730_0, C4<1>, C4<1>;
+v0x5636cfafd4a0_0 .net "a", 0 0, v0x5636cfafe730_0;  alias, 1 drivers
+v0x5636cfafd5b0_0 .net "out", 0 0, L_0x5636cfafeb10;  alias, 1 drivers
+S_0x5636cfafd690 .scope module, "or_chip" "or_chip" 5 12, 7 2 0, S_0x5636cfafc0d0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0x5636cfafee00 .functor NAND 1, L_0x5636cfafec50, L_0x5636cfafec50, C4<1>, C4<1>;
+L_0x5636cfafef20 .functor NAND 1, L_0x5636cfafed70, L_0x5636cfafed70, C4<1>, C4<1>;
+L_0x5636cfaff040 .functor NAND 1, L_0x5636cfafee00, L_0x5636cfafef20, C4<1>, C4<1>;
+v0x5636cfafd910_0 .net "a", 0 0, L_0x5636cfafec50;  alias, 1 drivers
+v0x5636cfafd9d0_0 .net "b", 0 0, L_0x5636cfafed70;  alias, 1 drivers
+v0x5636cfafdaa0_0 .net "out", 0 0, L_0x5636cfaff040;  alias, 1 drivers
+v0x5636cfafdb70_0 .net "w1", 0 0, L_0x5636cfafee00;  1 drivers
+v0x5636cfafdc10_0 .net "w2", 0 0, L_0x5636cfafef20;  1 drivers
+    .scope S_0x5636cfae18f0;
+T_0 ;
+    %vpi_call 2 8 "$monitor", "a: %b, b: %b, sum: %b, carry:%b ", v0x5636cfafe670_0, v0x5636cfafe730_0, v0x5636cfafe890_0, v0x5636cfafe7f0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5636cfafe670_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5636cfafe730_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5636cfafe670_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5636cfafe730_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5636cfafe670_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5636cfafe730_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5636cfafe670_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5636cfafe730_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5636cfafe670_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5636cfafe730_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 18 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 8;
+    "N/A";
+    "<interactive>";
+    "./tests/half_adder_tb.v";
+    "half_adder.v";
+    "../chips/and_chip.v";
+    "../chips/xor_chip.v";
+    "../chips/not_chip.v";
+    "../chips/or_chip.v";
