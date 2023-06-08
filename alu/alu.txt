@@ -1,6 +1,6 @@
 Abstraction:
-half adder - add 2 bits
-full addear - add 3 bits
+half adder - add 2 bits -d
+full addear - add 3 bit -d
 adder - add 2 n bits numbers
 incrementer - special purpose adder, designed to add 1  to given number
 alu - full alu for gorundhog
