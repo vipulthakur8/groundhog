@@ -26,4 +26,12 @@ iverilog -o ./test_results/ADDER ./tests/adder_16_tb.v adder.v full_adder.v half
 
 ./test_results/ADDER
 
+echo "#########################################"
+echo "Testing incrementer"
+sleep 0.2
+
+iverilog -o ./test_results/INC16 ./tests/incr16_tb.v inc16.v adder.v full_adder.v half_adder.v ../chips/and_chip.v ../chips/xor_chip.v ../chips/not_chip.v  ../chips/or_chip.v 
+
+./test_results/INC16
+
 rm test_results -r
