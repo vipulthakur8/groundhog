@@ -1,0 +1,5 @@
+D flipflop 
+bit: one bit register
+16 bit register
+RAM 16K
+16 bit program counter
