@@ -1,7 +1,7 @@
 module common_clock(clk);
 	output reg clk;
 	initial begin
-		clk <= 0;
+		clk <= 1;
 	end	
 	always begin	
 		#5;
