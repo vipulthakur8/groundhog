@@ -3,7 +3,7 @@ module dff(out, in, clk);
 	input in;
 	input clk;	
 
-	always @(posedge clk)
+	always @(negedge clk)
 		out <= in;
 	
 endmodule
