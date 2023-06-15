@@ -12,7 +12,6 @@ module bit_tb;
 		$monitor("clk: %b, in: %b, load: %b, out: %b", clk, in, load, out);
 
 		in = 1; load = 1; #10
-		
 		in = 0; load = 0; #10
 		in = 0; load = 0; #10
 		in = 1; load = 0; #10
