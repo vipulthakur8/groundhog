@@ -27,19 +27,6 @@ module ram8(out, in, address, load, clk);
 	reg16bit reg6(o6, in, load6, clk);
 	reg16bit reg7(o7, in, load7, clk);
 
-	initial begin
-		for ( i = 0; i < 8; i = i + 1 ) begin
-			$display("current value of r0: %b", o0); 	
-			$display("current value of r1: %b", o1); 	
-			$display("current value of r2: %b", o2); 	
-			$display("current value of r3: %b", o3); 	
-			$display("current value of r4: %b", o4); 	
-			$display("current value of r5: %b", o5); 	
-			$display("current value of r6: %b", o6); 	
-			$display("current value of r7: %b", o7); 	
-		end
-	end
-
 	mux_8way16bit_chip mux8way(out, o0, o1, o2, o3, o4, o5, o6, o7, address);	
 	
 endmodule
