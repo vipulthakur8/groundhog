@@ -33,6 +33,13 @@ iverilog -o ./test_results/RAM8 ./tests/ram8_tb.v ram8.v reg16bit.v clock.v dff.
 
 ./test_results/RAM8
 
-gtkwave ./test_results/RAM8.vcd
+#gtkwave ./test_results/RAM8.vcd
+
+echo "########################################"
+echo "Testing RAM8 "
+iverilog -o ./test_results/RAM64 ./tests/ram64_tb.v ram64.v ram8.v reg16bit.v clock.v dff.v bit.v ../chips/mux_chip_2to1.v ../chips/not_chip.v ../chips/and_chip.v ../chips/or_chip.v ../chips/demux_8way1bit_chip.v ../chips/mux_8way16bit_chip.v
+
+./test_results/RAM64
+#gtkwave ./test_results/RAM64.vcd
 
 rm test_results -r
