@@ -1,1 +1,5 @@
 // Make architecture.
+
+1. cpu
+2. instruction memory: ROM32K
+3. I/O 
