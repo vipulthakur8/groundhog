@@ -3,3 +3,5 @@
 1. cpu
 2. instruction memory: ROM32K
 3. I/O 
+4. data register
+5. address register
