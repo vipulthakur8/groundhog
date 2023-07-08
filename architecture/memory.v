@@ -1,6 +1,6 @@
 module memory(out, in, address, load, clk);
 	input [15:0]in;
-	input [15:0]address;
+	input [14:0]address;
 	input load, clk;
 	
 
@@ -15,23 +15,16 @@ module memory(out, in, address, load, clk);
 	 */
 
 	always @(negedge clk) begin
-		if (address == 24576) begin 
-			out <= memory[address];
-		end
-
 		if (load && address <= 16383) begin
 			memory[address] <= in;
-		end else begin
-			out <= memory[address];
+			//out <= memory[address];
 		end
-
 		if (address >= 16384 && address <= 24575) begin
 			if (load) begin
 				memory[address] <= in;
-			end else begin 
-				out <= memory[address];
-			end
+			end 
 		end
+		out = memory[address];
 	end
 	
 endmodule
