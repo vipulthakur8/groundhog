@@ -24,7 +24,7 @@ module memory(out, in, address, load, clk);
 				memory[address] <= in;
 			end 
 		end
-		out = memory[address];
+		out <= memory[address];
 	end
 	
 endmodule
